@@ -1,6 +1,7 @@
 package com.example.projetose.entities;
 import java.util.List;
 
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,6 +14,7 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
+
 public class Paciente {
 
     @Id
@@ -34,7 +36,7 @@ public class Paciente {
     @Column
     private Double peso;
 
-    @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Consulta> consultas;
 
 }

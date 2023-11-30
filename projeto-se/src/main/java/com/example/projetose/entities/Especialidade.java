@@ -1,6 +1,6 @@
 package com.example.projetose.entities;
 
-import java.sql.Date;
+
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -23,6 +23,6 @@ public class Especialidade {
     @Column(nullable = false)
     private String nome;
 
-    @ManyToMany(mappedBy = "especialidades")
+    @ManyToMany
     private List<PostoSaude> postosSaude;
 }

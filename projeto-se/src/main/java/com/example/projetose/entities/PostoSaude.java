@@ -26,15 +26,7 @@ public class PostoSaude {
 
     @Column(nullable = false)
     private String Endereco;
-
-    @ManyToMany
-    @JoinTable(
-            name = "postosaude_especialidade",
-            joinColumns = @JoinColumn(name = "postosaude_id"),
-            inverseJoinColumns = @JoinColumn(name = "especialidade_id")
-    )
-    private List<Especialidade> especialidades;
-
+  
     @ManyToMany
     @JoinTable(
             name = "postosaude_medico",
