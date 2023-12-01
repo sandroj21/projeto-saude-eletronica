@@ -25,7 +25,7 @@ public class PostoSaude {
     private String nome;
 
     @Column(nullable = false)
-    private String Endereco;
+    private String endereco;
   
     @ManyToMany
     @JoinTable(

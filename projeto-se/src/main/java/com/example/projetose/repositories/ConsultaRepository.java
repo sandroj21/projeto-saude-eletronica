@@ -7,5 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.projetose.entities.Consulta;
 
 public interface ConsultaRepository extends JpaRepository<Consulta, Integer>{
-    List<Consulta> getConsultaPorMedico (Integer idMedico);
+    //List<Consulta> getConsultaPorMedico (Integer idMedico);
 }

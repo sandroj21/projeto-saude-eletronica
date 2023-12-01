@@ -25,7 +25,7 @@ public class Consulta {
     private Integer id;
 
     @Column(nullable = false)
-    private Date dataConsulta;
+    private Date data_consulta;
 
     @Column
     private boolean retorno;

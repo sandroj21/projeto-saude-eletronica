@@ -34,7 +34,7 @@ public class Paciente {
     private Double altura;
 
     @Column
-    private Double peso;
+    private Integer peso;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Consulta> consultas;
