@@ -1,6 +1,9 @@
 package com.example.projetose.entities;
 
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +29,7 @@ public class Medico {
     @Column(nullable = false)
     private String crm;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "medico")
     private List<Consulta> consultas;
 

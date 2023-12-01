@@ -34,7 +34,6 @@ public class Consulta {
     @JoinColumn(name = "medico_id")
     private Medico medico;
 
-
     @OneToOne
     private Especialidade especialidade;
 
