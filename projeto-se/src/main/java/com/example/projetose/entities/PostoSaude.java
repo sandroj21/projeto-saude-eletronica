@@ -2,6 +2,8 @@ package com.example.projetose.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +29,7 @@ public class PostoSaude {
     @Column(nullable = false)
     private String endereco;
   
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "postosaude_medico",
@@ -34,4 +37,15 @@ public class PostoSaude {
             inverseJoinColumns = @JoinColumn(name = "medico_id")
     )
     private List<Medico> medicos;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+            name = "postosaude_especialidades",
+            joinColumns = @JoinColumn(name = "postosaude_id"),
+            inverseJoinColumns = @JoinColumn(name = "especialidade_id")
+    )
+    private List<Especialidade> especialidades;
+
+
 }

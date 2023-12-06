@@ -9,6 +9,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Getter;
 
@@ -33,6 +36,13 @@ public class Medico {
     @OneToMany(mappedBy = "medico")
     private List<Consulta> consultas;
 
-
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+        name = "medico_especialidade",
+        joinColumns = @JoinColumn(name = "medico_id"),
+        inverseJoinColumns = @JoinColumn(name = "especialidade_id")
+    )
+    private List<Especialidade> especialidades;
 
 }

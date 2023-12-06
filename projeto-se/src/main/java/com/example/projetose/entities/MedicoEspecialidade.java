@@ -1,5 +1,7 @@
 package com.example.projetose.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +29,7 @@ public class MedicoEspecialidade {
     @JoinColumn(name = "medico_id")
     private Medico medico;
 
+    
     @ManyToOne
     @JoinColumn(name = "especialidade_id")
     private Especialidade especialidade;
