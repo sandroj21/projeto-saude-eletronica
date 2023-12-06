@@ -24,7 +24,7 @@ public class PostoEspecialidadeController {
     PostoEspecialidadeService postoEspecialidadeService;
     
     @GetMapping("/{idEspecialidade}")
-    public List<PostoSaude> getMedicosPorEspecialidade(@PathVariable Integer idEspecialidade) {
+    public List<PostoSaude> getPostosPorEspecialidade(@PathVariable Integer idEspecialidade) {
         return postoEspecialidadeService.getPostosPorEspecialidade(idEspecialidade);
     }
 

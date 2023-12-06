@@ -1,5 +1,6 @@
 package com.example.projetose.controllers;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,4 +41,15 @@ public class ConsultaController {
         consultaService.remover(idConsulta);
     }
     
+    @GetMapping("/medico/{idMedico}")
+    public List<Consulta> getConsultasPorMedico(@PathVariable Integer idMedico) {
+        List<Consulta> consultas = consultaService.getConsultasPorMedico(idMedico);
+        return consultas;
+    }
+
+    @GetMapping("/especialidade/{idEspecialidade}")
+    public List<Consulta> getConsultasPorEspecialidade(@PathVariable Integer idEspecialidade) {
+        List<Consulta> consultas = consultaService.getConsultasPorEspecialidade(idEspecialidade);
+        return consultas;
+    }
 }

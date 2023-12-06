@@ -13,7 +13,6 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@Table(name="posto_especialidade")
 
 //@NamedQuery(name = "PostoEspecialiade.getPostosporEspecialidade", query ="SELECT pe FROM posto_especialidade pe WHERE pe.especialidade.id=:idEspecialidade")
 
@@ -24,7 +23,7 @@ public class PostoEspecialidade{
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "medico_id")
+    @JoinColumn(name = "posto_id")
     private PostoSaude posto;
 
     @ManyToOne

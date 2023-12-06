@@ -16,8 +16,8 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-//@NamedQuery(name = "Consulta.getConsultaPorMedico", query ="SELECT c FROM consulta c WHERE c.medico.id=:idMedico")
-
+@NamedQuery(name = "Consulta.getConsultasPorMedico", query ="SELECT c FROM Consulta c WHERE c.medico.id=:idMedico")
+@NamedQuery(name = "Consulta.getConsultasPorEspecialidade", query = "SELECT c FROM Consulta c WHERE c.especialidade.id=:idEspecialidade")
 public class Consulta {
     
     @Id
@@ -31,10 +31,11 @@ public class Consulta {
     private boolean retorno;
 
     @ManyToOne
-    @JoinColumn(name = "medico_id")
+    @JoinColumn(name = "medico_id", nullable = false, updatable = false)
     private Medico medico;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "especialidade_id", nullable = false, updatable = false)
     private Especialidade especialidade;
 
 }

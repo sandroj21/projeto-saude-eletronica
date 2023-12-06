@@ -1,6 +1,7 @@
 package com.example.projetose.services;
 
 import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,4 +33,11 @@ public class ConsultaService {
         consultaRepository.deleteById(idConsulta);
     }
 
+    public List<Consulta> getConsultasPorMedico(Integer idMedico) {
+        return consultaRepository.getConsultasPorMedico(idMedico);
+    }
+
+    public List<Consulta> getConsultasPorEspecialidade(Integer idEspecialidade) {
+        return consultaRepository.getConsultasPorEspecialidade(idEspecialidade);
+    }
 }

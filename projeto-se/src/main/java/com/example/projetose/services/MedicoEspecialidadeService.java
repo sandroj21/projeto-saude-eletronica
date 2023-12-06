@@ -35,7 +35,7 @@ public class MedicoEspecialidadeService {
             return medicoRepository.findByEspecialidades(e);
         }
 
-        return Collections.emptyList();  // Ou retorne algo apropriado se necessário
+        return Collections.emptyList();
     }
     
     public MedicoEspecialidade salvar(MedicoEspecialidade medicoEspecialidade) {

@@ -8,5 +8,4 @@ import com.example.projetose.entities.PostoSaude;
 import java.util.List;
 
 public interface PostoEspecialidadeRepository extends JpaRepository<PostoEspecialidade, Integer>{
-    //List<PostoEspecialidade> getPostosporEspecialidade (Integer idEspecialidade);
 }
