@@ -3,6 +3,7 @@ package com.example.projetose.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,21 +25,25 @@ public class PostoEspecialidadeController {
     PostoEspecialidadeService postoEspecialidadeService;
     
     @GetMapping("/{idEspecialidade}")
+    @Secured(value = { "ROLE_ADMIN", "ROLE_GESTOR" })
     public List<PostoSaude> getPostosPorEspecialidade(@PathVariable Integer idEspecialidade) {
         return postoEspecialidadeService.getPostosPorEspecialidade(idEspecialidade);
     }
 
     @PostMapping
+    @Secured(value = { "ROLE_GESTOR" })
     public void salvar(@RequestBody PostoEspecialidade pe) {
         postoEspecialidadeService.salvar(pe);
     }
 
     @PutMapping
+    @Secured(value = { "ROLE_GESTOR" })
     public void atualizar(@RequestBody PostoEspecialidade pe) {
         postoEspecialidadeService.salvar(pe);
     }
 
     @DeleteMapping("/{idMedicoEspecialidade}")
+    @Secured(value = { "ROLE_GESTOR" })
     public void remover(@PathVariable Integer idPostoEspecialidade) {
         postoEspecialidadeService.remover(idPostoEspecialidade);
     }

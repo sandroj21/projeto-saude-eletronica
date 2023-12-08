@@ -1,6 +1,7 @@
 package com.example.projetose.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,21 +22,25 @@ public class PacienteController {
     PacienteService pacienteService;
     
     @GetMapping("/{idPaciente}")
+    @Secured(value = { "ROLE_ADMIN", "ROLE_GESTOR" })
     public Paciente getPaciente(@PathVariable Integer idPaciente) {
         return pacienteService.getPaciente(idPaciente);
     }
 
     @PostMapping
+    @Secured(value = { "ROLE_GESTOR" })
     public void cadastrarPaciente(@RequestBody Paciente paciente) {
         pacienteService.salvar(paciente);
     }
 
     @PutMapping
+    @Secured(value = { "ROLE_GESTOR" })
     public void atualizarPaciente(@RequestBody Paciente paciente) {
         pacienteService.atualizar(paciente);
     }
 
     @DeleteMapping("/{idPaciente}")
+    @Secured(value = { "ROLE_GESTOR" })
     public void removerPaciente(@PathVariable Integer idPaciente) {
         pacienteService.remover(idPaciente);
     }

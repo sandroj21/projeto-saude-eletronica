@@ -32,8 +32,8 @@ public class PostoSaude {
     @JsonIgnore
     @ManyToMany
     @JoinTable(
-            name = "postosaude_medico",
-            joinColumns = @JoinColumn(name = "postosaude_id"),
+            name = "posto_medico",
+            joinColumns = @JoinColumn(name = "posto_id"),
             inverseJoinColumns = @JoinColumn(name = "medico_id")
     )
     private List<Medico> medicos;
@@ -41,8 +41,8 @@ public class PostoSaude {
     @JsonIgnore
     @ManyToMany
     @JoinTable(
-            name = "postosaude_especialidades",
-            joinColumns = @JoinColumn(name = "postosaude_id"),
+            name = "posto_especialidades",
+            joinColumns = @JoinColumn(name = "posto_id"),
             inverseJoinColumns = @JoinColumn(name = "especialidade_id")
     )
     private List<Especialidade> especialidades;

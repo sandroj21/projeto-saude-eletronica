@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.projetose.entities.Medico;
-import com.example.projetose.entities.Paciente;
 import com.example.projetose.repositories.MedicoRepository;
 
 @Service

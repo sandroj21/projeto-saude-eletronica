@@ -17,7 +17,7 @@ public class ConsultaService {
 
     public Consulta getConsulta(Integer idConsulta) {
         Optional<Consulta> consulta = consultaRepository.findById(idConsulta);
-        Consulta c = consulta.get();
+        
         return consulta.get();
     }
 

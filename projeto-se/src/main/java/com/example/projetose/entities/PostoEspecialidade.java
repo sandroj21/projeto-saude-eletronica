@@ -6,16 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter @Setter
-
-//@NamedQuery(name = "PostoEspecialiade.getPostosporEspecialidade", query ="SELECT pe FROM posto_especialidade pe WHERE pe.especialidade.id=:idEspecialidade")
-
+@Table(name = "posto_especialidades")
 public class PostoEspecialidade{
     
     @Id
